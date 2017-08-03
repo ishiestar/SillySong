@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Silly Song!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8m-ob-BOn">
+                                <rect key="frame" x="38" y="28" width="298" height="147"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="Mz3-64-ItT"/>
+                                    <constraint firstAttribute="height" constant="147" id="o3f-CU-puz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="47"/>
+                                <color key="textColor" red="0.71140727313508489" green="0.28877641334704596" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-GY-L5y">
+                                <rect key="frame" x="16" y="183" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="OHz-IR-aHE"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="cpt-P7-DcP"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOA-dX-Jcf">
+                                <rect key="frame" x="38" y="249" width="298" height="301"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="301" id="4X4-Qv-axD"/>
+                                    <constraint firstAttribute="width" constant="298" id="P4d-1o-3sl"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Italic" family="Euphemia UCAS" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2562443306904798" green="0.86513717122500067" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YOA-dX-Jcf" firstAttribute="top" secondItem="cv3-GY-L5y" secondAttribute="bottom" constant="36" id="7mz-W7-d8Z"/>
+                            <constraint firstItem="d8m-ob-BOn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EeM-7h-oUa"/>
+                            <constraint firstItem="YOA-dX-Jcf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="Fom-Pl-mGJ"/>
+                            <constraint firstItem="YOA-dX-Jcf" firstAttribute="centerX" secondItem="cv3-GY-L5y" secondAttribute="centerX" id="VWn-B9-yui"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YOA-dX-Jcf" secondAttribute="trailing" constant="23" id="Vub-WN-HE9"/>
+                            <constraint firstItem="d8m-ob-BOn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="iYK-ZV-gYC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cv3-GY-L5y" secondAttribute="trailing" id="l2h-6b-eu0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="cv3-GY-L5y" secondAttribute="leading" id="wf5-Lj-tNm"/>
+                            <constraint firstItem="cv3-GY-L5y" firstAttribute="top" secondItem="d8m-ob-BOn" secondAttribute="bottom" constant="8" id="zKz-QT-4wD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lyricsText" destination="YOA-dX-Jcf" id="GST-nW-Y1Q"/>
+                        <outlet property="nameField" destination="cv3-GY-L5y" id="hP8-SF-7hq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-82.400000000000006" y="135.38230884557723"/>
         </scene>
     </scenes>
 </document>
